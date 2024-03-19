@@ -51,13 +51,11 @@ lengths1 = [ item_length_secs item | item <- playlist1 ]
 
 playlist1noAds = [ item | item <- playlist1, not (isAdvert item) ]
 
-playlist2 = [piece2, advert1]
+playlist2 = [piece2, advert1] 
 
-playlists = [playlist1, playlist2] -- a list of lists
+adsFromPlaylists = [item | playlist <- playlists, item <- playlist, isAdvert item]
 
-adsFromPlaylists = "todo" -- TASK 6.4(b)
-
-shortItemLenghts1 = "todo" -- TASK 6.4(a)
+shortItemLengths1 = [item_length_secs item | item <- playlist1, item_length_secs item < 20]
 
 main =
     do
